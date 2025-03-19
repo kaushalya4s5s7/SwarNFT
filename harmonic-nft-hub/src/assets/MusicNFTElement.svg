@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e" />
+      <stop offset="100%" stop-color="#16213e" />
+    </linearGradient>
+    
+    <!-- Glow effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Vinyl record texture -->
+    <pattern id="vinylPattern" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
+      <path d="M0 0 L40 0 L40 1 L0 1 Z" fill="#333" opacity="0.3" />
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  
+  
+  <!-- 3D Vinyl Record -->
+  <g transform="translate(400, 300)">
+    <!-- Record shadow -->
+    <ellipse cx="10" cy="15" rx="180" ry="50" fill="#000" opacity="0.4" />
+    
+    <!-- Record body -->
+    <circle cx="0" cy="0" r="150" fill="#121212" />
+    <circle cx="0" cy="0" r="148" fill="#202020" />
+    <circle cx="0" cy="0" r="147" fill="url(#vinylPattern)" />
+    
+    <!-- Record grooves -->
+    <circle cx="0" cy="0" r="130" fill="none" stroke="#333" stroke-width="1" />
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#333" stroke-width="1" />
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#333" stroke-width="1" />
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#333" stroke-width="1" />
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#333" stroke-width="1" />
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#333" stroke-width="1" />
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#333" stroke-width="1" />
+    
+    <!-- Record label -->
+    <circle cx="0" cy="0" r="50" fill="#6c5ce7" />
+    <circle cx="0" cy="0" r="15" fill="#121212" />
+    
+    <!-- NFT token spinning around the record -->
+    <g filter="url(#glow)">
+      <circle cx="120" cy="0" r="25" fill="#00cec9" opacity="0.9">
+        <animateTransform 
+          attributeName="transform" 
+          type="rotate" 
+          from="0 0 0" 
+          to="360 0 0" 
+          dur="20s" 
+          repeatCount="indefinite" />
+      </circle>
+      <text x="120" cy="0" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">
+        <tspan x="120" y="4">NFT</tspan>
+        <animateTransform 
+          attributeName="transform" 
+          type="rotate" 
+          from="0 0 0" 
+          to="360 0 0" 
+          dur="20s" 
+          repeatCount="indefinite" />
+      </text>
+    </g>
+    
+    <!-- Music waves -->
+    <g transform="translate(-200, -150)" filter="url(#glow)">
+      <path d="M0 0 Q 30 -50, 60 0 Q 90 50, 120 0 Q 150 -50, 180 0 Q 210 50, 240 0" 
+            fill="none" stroke="#fd79a8" stroke-width="3" opacity="0.7">
+        <animate 
+          attributeName="d" 
+          dur="3s"
+          repeatCount="indefinite"
+          values="
+            M0 0 Q 30 -50, 60 0 Q 90 50, 120 0 Q 150 -50, 180 0 Q 210 50, 240 0;
+            M0 0 Q 30 -30, 60 0 Q 90 30, 120 0 Q 150 -30, 180 0 Q 210 30, 240 0;
+            M0 0 Q 30 -50, 60 0 Q 90 50, 120 0 Q 150 -50, 180 0 Q 210 50, 240 0"
+          />
+      </path>
+    </g>
+    
+    <g transform="translate(0, 150)" filter="url(#glow)">
+      <path d="M0 0 Q 30 -40, 60 0 Q 90 40, 120 0 Q 150 -40, 180 0" 
+            fill="none" stroke="#0984e3" stroke-width="3" opacity="0.7">
+        <animate 
+          attributeName="d" 
+          dur="4s"
+          repeatCount="indefinite"
+          values="
+            M0 0 Q 30 -40, 60 0 Q 90 40, 120 0 Q 150 -40, 180 0;
+            M0 0 Q 30 -20, 60 0 Q 90 20, 120 0 Q 150 -20, 180 0;
+            M0 0 Q 30 -40, 60 0 Q 90 40, 120 0 Q 150 -40, 180 0"
+          />
+      </path>
+    </g>
+    
+    <!-- Floating music notes -->
+    <g transform="translate(-100, -80)" filter="url(#glow)">
+      <path d="M0 0 Q 5 -10, 10 -5 L 10 -20 L 12 -20 L 12 -3 Q 17 -13, 22 -8 Q 27 -3, 22 2 Q 17 7, 12 2 L 12 5 L 10 5 L 10 0 Q 5 5, 0 0 Q -5 -5, 0 -10 Z" 
+            fill="#ffeaa7" opacity="0.8">
+        <animateTransform 
+          attributeName="transform" 
+          type="translate" 
+          values="0,0; 0,-20; 0,0" 
+          dur="4s" 
+          repeatCount="indefinite" />
+      </path>
+    </g>
+    
+    <g transform="translate(100, -50)" filter="url(#glow)">
+      <path d="M0 0 Q 5 -10, 10 -5 L 10 -20 L 12 -20 L 12 -3 Q 17 -13, 22 -8 Q 27 -3, 22 2 Q 17 7, 12 2 L 12 5 L 10 5 L 10 0 Q 5 5, 0 0 Q -5 -5, 0 -10 Z" 
+            fill="#55efc4" opacity="0.8">
+        <animateTransform 
+          attributeName="transform" 
+          type="translate" 
+          values="0,0; 0,-15; 0,0" 
+          dur="3s" 
+          repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+</svg>
