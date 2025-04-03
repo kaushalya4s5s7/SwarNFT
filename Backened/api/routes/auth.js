@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post("/connect-wallet", authController.connectWallet);
 router.post("/register-role", authController.registerRole);
+router.get("/check-user", authController.checkUser);
 
 module.exports = router;

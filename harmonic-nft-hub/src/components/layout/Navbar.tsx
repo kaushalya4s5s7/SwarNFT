@@ -1,10 +1,9 @@
-
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { motion } from 'framer-motion';
-import WalletConnectButton from '@/components/ui/WalletConnectButton';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import WalletConnectButton from "@/components/ui/WalletConnectButton";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const location = useLocation();
@@ -12,10 +11,10 @@ const Navbar = () => {
   const { isAuthenticated, role } = useSelector((state: any) => state.auth);
 
   const navLinks = [
-    { name: 'How It Works', path: '/how-it-works' },
-    { name: 'Trending', path: '/trending' },
-    { name: 'Collection', path: '/collection' },
-    { name: 'Community', path: '/community' },
+    { name: "How It Works", path: "/how-it-works" },
+    { name: "Trending", path: "/trending" },
+    { name: "Collection", path: "/collection" },
+    { name: "Community", path: "/community" },
   ];
 
   useEffect(() => {
@@ -26,9 +25,9 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
 
@@ -38,7 +37,7 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-8 lg:px-12 py-4 transition-all duration-300 ${
-        scrolled ? 'backdrop-blur-lg bg-black/70' : 'bg-transparent'
+        scrolled ? "backdrop-blur-lg bg-black/70" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -55,8 +54,8 @@ const Navbar = () => {
               to={link.path}
               className={`text-sm font-medium transition-colors hover:text-neon-green ${
                 location.pathname === link.path
-                  ? 'text-neon-green'
-                  : 'text-gray-300'
+                  ? "text-neon-green"
+                  : "text-gray-300"
               }`}
             >
               {link.name}
@@ -66,16 +65,26 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-4">
           <Link to="/whitepaper">
-            <Button variant="outline" className="border-gray-700 hover:border-neon-green text-white hover:text-neon-green transition-all">
+            <Button
+              variant="outline"
+              className="border-gray-700 hover:border-neon-green text-white hover:text-neon-green transition-all"
+            >
               Whitepaper
             </Button>
           </Link>
-          
+
           <WalletConnectButton />
-          
-          {isAuthenticated && role && (
-            <Link to={role === 'artist' ? '/artist-dashboard' : '/listener-dashboard'}>
-              <Button variant="ghost" className="text-white hover:text-neon-green">
+
+          {isAuthenticated && (
+            <Link
+              to={
+                role === "artist" ? "/artist-dashboard" : "/listener-dashboard"
+              }
+            >
+              <Button
+                variant="ghost"
+                className="text-white hover:text-neon-green"
+              >
                 Dashboard
               </Button>
             </Link>

@@ -21,10 +21,18 @@ exports.registerRole = async (walletAddress, role) => {
 
   const newUser = new User({ walletAddress, role }); // Store the raw walletAddress
   await newUser.save();
+  console.log(newUser);
 
   const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET, {
     expiresIn: "1h",
   });
 
   return { token, role };
+};
+exports.getUserByWallet = async (walletAddress) => {
+  try {
+    return await User.findOne({ walletAddress: walletAddress.toLowerCase() });
+  } catch (error) {
+    throw new Error("Error fetching user from database");
+  }
 };
