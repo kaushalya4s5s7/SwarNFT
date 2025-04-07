@@ -1,0 +1,6 @@
+{
+  "songs": [
+    { "name": "Blinding Lights", "year": 2020, "artists": ["The Weeknd"] },
+    { "name": "Shape of You", "year": 2017, "artists": ["Ed Sheeran"] }
+  ]
+}
