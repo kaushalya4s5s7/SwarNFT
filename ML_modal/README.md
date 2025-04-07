@@ -43,6 +43,6 @@ For any queries regarding the project, please reach out through the Issues secti
 
 ## Contributors
 
-Sathish Prasad
+Kaushal chaudhari
 
 
