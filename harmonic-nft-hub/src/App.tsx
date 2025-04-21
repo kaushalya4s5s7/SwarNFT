@@ -30,6 +30,7 @@ import Footer from "./components/layout/Footer";
 import walletReducer from "./features/wallet/walletSlice";
 import authReducer from "./features/auth/authSlice";
 import musicReducer from "./features/music/musicSlice";
+import { Web3Provider } from "./context/web3context";
 
 // Redux persist configuration
 const persistConfig = {
@@ -64,28 +65,30 @@ const App = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/how-it-works" element={<HowItWorks />} />
-              <Route path="/trending" element={<Trending />} />
-              <Route path="/collection" element={<Collection />} />
-              <Route path="/community" element={<Community />} />
-              <Route path="/whitepaper" element={<Whitepaper />} />
-              <Route
-                path="/listener-dashboard"
-                element={<ListenerDashboard />}
-              />
-              <Route path="/artist-dashboard" element={<ArtistDashboard />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
-        </TooltipProvider>
+        <Web3Provider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/how-it-works" element={<HowItWorks />} />
+                <Route path="/trending" element={<Trending />} />
+                <Route path="/collection" element={<Collection />} />
+                <Route path="/community" element={<Community />} />
+                <Route path="/whitepaper" element={<Whitepaper />} />
+                <Route
+                  path="/listener-dashboard"
+                  element={<ListenerDashboard />}
+                />
+                <Route path="/artist-dashboard" element={<ArtistDashboard />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </TooltipProvider>
+        </Web3Provider>
       </QueryClientProvider>
     </PersistGate>
   </Provider>
