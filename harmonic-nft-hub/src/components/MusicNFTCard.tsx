@@ -230,7 +230,12 @@ const MusicNFTCard: React.FC<MusicNFTCardProps> = ({
         </p>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0 justify-between">
+      <CardFooter className="p-4 pt-0 flex-col gap-2 items-start">
+        <div className="text-xs text-muted-foreground w-full">
+          <p>Total Shares: {totalShares}</p>
+          <p>Shares Remaining: {totalShares - sharesSold}</p>
+        </div>
+
         {canPlay ? (
           <Button
             variant="default"
