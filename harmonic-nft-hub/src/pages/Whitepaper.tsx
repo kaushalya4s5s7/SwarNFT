@@ -38,10 +38,10 @@ const Whitepaper = () => {
                   <span className="text-sm font-medium">Official Document</span>
                 </div>
                 <h1 className="heading-lg text-white mb-6">
-                  RhythMint Whitepaper
+                  SwarNFT Whitepaper
                 </h1>
                 <p className="body-lg text-gray-300 max-w-3xl">
-                  A comprehensive overview of RhythMint's vision, technology, and roadmap.
+                  A comprehensive overview of SwarNFT's vision, technology, and roadmap.
                   Learn how we're revolutionizing music ownership through blockchain technology.
                 </p>
               
@@ -52,7 +52,7 @@ const Whitepaper = () => {
               <h2 className="heading-md text-white mb-6">1. Introduction</h2>
               <div className="prose prose-invert max-w-none">
                 <p className="text-gray-300 mb-4">
-                  RhythMint is a decentralized platform that leverages blockchain technology to revolutionize how music is owned, distributed, and monetized. By tokenizing music as NFTs (Non-Fungible Tokens), we create new opportunities for artists and listeners alike.
+                  SwarNFT is a decentralized platform that leverages blockchain technology to revolutionize how music is owned, distributed, and monetized. By tokenizing music as NFTs (Non-Fungible Tokens), we create new opportunities for artists and listeners alike.
                 </p>
                 <p className="text-gray-300 mb-4">
                   In the traditional music industry, artists often receive only a small fraction of the revenue generated from their work, with intermediaries taking the lion's share. RhythMint aims to change this by enabling direct artist-to-fan relationships and creating new revenue streams through fractional ownership of music NFTs.
@@ -133,7 +133,7 @@ const Whitepaper = () => {
               {/* Content truncated for brevity */}
               <div className="prose prose-invert max-w-none">
                 <p className="text-gray-300 mb-6">
-                  RhythMint's core innovation lies in our approach to music NFTs, which represent both digital ownership and rights to music assets.
+                  SwarNFT's core innovation lies in our approach to music NFTs, which represent both digital ownership and rights to music assets.
                 </p>
                 
                 <h3 className="text-xl font-semibold text-white mb-4">NFT Structure</h3>
@@ -149,7 +149,7 @@ const Whitepaper = () => {
                 
                 <h3 className="text-xl font-semibold text-white mb-4">Fractional Ownership Model</h3>
                 <p className="text-gray-300 mb-6">
-                  RhythMint introduces a fractional ownership model that allows multiple collectors to own shares of a single music NFT. This democratizes access to music investment and creates more liquidity in the marketplace.
+                  SwarNFT introduces a fractional ownership model that allows multiple collectors to own shares of a single music NFT. This democratizes access to music investment and creates more liquidity in the marketplace.
                 </p>
                 
                 <div className="glass-card p-6 mb-6">
