@@ -230,12 +230,7 @@ const MusicNFTCard: React.FC<MusicNFTCardProps> = ({
         </p>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0 flex-col gap-2 items-start">
-        <div className="text-xs text-muted-foreground w-full">
-          <p>Total Shares: {totalShares}</p>
-          <p>Shares Remaining: {totalShares - sharesSold}</p>
-        </div>
-
+      <CardFooter className="p-4 pt-0 justify-between">
         {canPlay ? (
           <Button
             variant="default"
@@ -266,6 +261,11 @@ const MusicNFTCard: React.FC<MusicNFTCardProps> = ({
             Get Access
           </Button>
         )}
+        <div className="text-xs text-muted-foreground w-full">
+                    <p>Total Shares: {totalShares}</p>
+          <p>Shares Remaining: {totalShares - sharesSold}</p>
+          {userShares > 0 && <p>Your Shares: {userShares}</p>};
+        </div>
       </CardFooter>
 
       {/* Buy Access Dialog */}
@@ -348,3 +348,4 @@ const MusicNFTCard: React.FC<MusicNFTCardProps> = ({
 };
 
 export default MusicNFTCard;
+7;

@@ -16,6 +16,12 @@ contract MusicSharesNFT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIds;
+    
+    // Platform address to receive fees
+    address private platformAddress;
+    
+    // Platform fee percentage (5%)
+    uint256 private constant PLATFORM_FEE = 5;
 
     // Struct to store NFT metadata
     struct MusicNFT {
@@ -41,8 +47,16 @@ contract MusicSharesNFT is ERC721URIStorage, Ownable {
     event SharesPurchased(uint256 tokenId, address buyer, uint256 sharesAmount, uint256 totalCost);
     event PriceUpdated(uint256 tokenId, uint256 newPrice);
     event NFTDeactivated(uint256 tokenId);
+    event PlatformFeeTransferred(uint256 tokenId, uint256 amount);
 
-    constructor() ERC721("MusicSharesNFT", "MUSIC") Ownable(msg.sender) {}
+    /**
+     * @dev Constructor that sets the platform address for fee collection
+     * @param _platformAddress Address of the platform that will receive fees
+     */
+    constructor(address _platformAddress) ERC721("MusicSharesNFT", "MUSIC") Ownable(msg.sender) {
+        require(_platformAddress != address(0), "Platform address cannot be zero address");
+        platformAddress = _platformAddress;
+    }
 
     /**
      * @dev Creates a new music NFT and mints it to the creator
@@ -129,8 +143,16 @@ contract MusicSharesNFT is ERC721URIStorage, Ownable {
             ownedTokenIds[msg.sender].push(_tokenId);
         }
         
-        // Transfer payment to seller
-        payable(seller).transfer(totalCost);
+        // Calculate platform fee (5% of total cost)
+        uint256 platformFee = totalCost.mul(PLATFORM_FEE).div(100);
+        uint256 sellerAmount = totalCost.sub(platformFee);
+        
+        // Transfer payment to platform and seller
+        payable(platformAddress).transfer(platformFee);
+        payable(seller).transfer(sellerAmount);
+        
+        // Emit event for platform fee transfer
+        emit PlatformFeeTransferred(_tokenId, platformFee);
         
         // Refund excess payment if any
         uint256 excess = msg.value.sub(totalCost);
@@ -182,11 +204,7 @@ contract MusicSharesNFT is ERC721URIStorage, Ownable {
         return allNFTs;
     }
     
-    /**
-     * @dev Gets metadata about a music NFT with exact ABI signature requested
-     * @param tokenId ID of the NFT
-     * @return Tuple containing NFT details including sharesSold
-     */
+   
     function getMusicNFTDetails(uint256 tokenId) public view returns (
         string memory title, 
         string memory artist, 
@@ -284,5 +302,21 @@ contract MusicSharesNFT is ERC721URIStorage, Ownable {
      */
     function getOwnedNFTs(address owner) public view returns (uint256[] memory) {
         return ownedTokenIds[owner];
+    }
+    
+    /**
+     * @dev Returns the current platform address
+     * @return The platform address
+     */
+    function getPlatformAddress() public view returns (address) {
+        return platformAddress;
+    }
+    
+    /**
+     * @dev Returns the platform fee percentage
+     * @return The platform fee percentage
+     */
+    function getPlatformFee() public pure returns (uint256) {
+        return PLATFORM_FEE;
     }
 }
