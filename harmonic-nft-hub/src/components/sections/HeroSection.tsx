@@ -25,7 +25,7 @@ const HeroSection = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="heading-xl text-white mb-6 mt-8">
-                <span className="block">RhythMint</span>
+                <span className="block">SwarNFT</span>
                 <span className="block">Music</span>
                 <span className="block text-yellow-300 text-glow">NFTs</span>
                 <span className="block">Collection</span>
