@@ -1,9 +1,16 @@
-
-import { motion } from 'framer-motion';
-import { ArrowRight, Wallet, Music, TrendingUp, Users, Shield, BarChart3 } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import MusicPlayer from '@/components/ui/MusicPlayer';
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Wallet,
+  Music,
+  TrendingUp,
+  Users,
+  Shield,
+  BarChart3,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import MusicPlayer from "@/components/ui/MusicPlayer";
 
 const HowItWorks = () => {
   return (
@@ -38,24 +45,33 @@ const HowItWorks = () => {
               <div className="p-4 bg-black/40 rounded-lg mb-5 border border-neon-green/20">
                 <Wallet className="h-10 w-10 text-neon-green" />
               </div>
-              <h2 className="text-2xl font-semibold mb-4 text-white">Step 1: Connect Wallet</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-white">
+                Step 1: Connect Wallet
+              </h2>
               <p className="text-gray-400 mb-6">
-                Link your crypto wallet to start your journey. We support MetaMask, WalletConnect,
-                and other popular providers. Your wallet serves as your identity and allows you to
-                buy, sell, and trade music NFTs on our platform.
+                Link your crypto wallet to start your journey. We support
+                MetaMask, WalletConnect, and other popular providers. Your
+                wallet serves as your identity and allows you to buy, sell, and
+                trade music NFTs on our platform.
               </p>
               <ul className="space-y-2 text-gray-400 mb-6">
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-neon-green mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Secure authentication through blockchain technology</span>
+                  <span>
+                    Secure authentication through blockchain technology
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-neon-green mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Your wallet address maps to your role (artist or listener)</span>
+                  <span>
+                    Your wallet address maps to your role (artist or listener)
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-neon-green mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Switch networks seamlessly for different blockchain support</span>
+                  <span>
+                    Switch networks seamlessly for different blockchain support
+                  </span>
                 </li>
               </ul>
               <Button
@@ -95,20 +111,27 @@ const HowItWorks = () => {
               <div className="p-4 bg-black/40 rounded-lg mb-5 border border-neon-green/20">
                 <Music className="h-10 w-10 text-neon-green" />
               </div>
-              <h2 className="text-2xl font-semibold mb-4 text-white">Step 2: Choose Your Music</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-white">
+                Step 2: Choose Your Music
+              </h2>
               <p className="text-gray-400 mb-6">
-                Browse our exclusive collection of music NFTs from emerging and established artists.
-                Each track is a unique digital asset that can be owned, traded, and collected.
-                Pre-authenticated users can listen to samples, while authenticated users get full access.
+                Browse our exclusive collection of music NFTs from emerging and
+                established artists. Each track is a unique digital asset that
+                can be owned, traded, and collected. Pre-authenticated users can
+                listen to samples, while authenticated users get full access.
               </p>
               <ul className="space-y-2 text-gray-400 mb-6">
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-neon-green mr-2 mt-0.5 flex-shrink-0" />
-                  <span>High-quality audio files verified on the blockchain</span>
+                  <span>
+                    High-quality audio files verified on the blockchain
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-neon-green mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Detailed information about the artist and creation process</span>
+                  <span>
+                    Detailed information about the artist and creation process
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-neon-green mr-2 mt-0.5 flex-shrink-0" />
@@ -138,11 +161,14 @@ const HowItWorks = () => {
               <div className="p-4 bg-black/40 rounded-lg mb-5 border border-neon-green/20">
                 <TrendingUp className="h-10 w-10 text-neon-green" />
               </div>
-              <h2 className="text-2xl font-semibold mb-4 text-white">Step 3: Make Your Bid</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-white">
+                Step 3: Make Your Bid
+              </h2>
               <p className="text-gray-400 mb-6">
-                Found something you love? Place bids on your favorite music NFTs or buy fractional
-                ownership directly. Our platform supports both full ownership and shared ownership
-                models, allowing more fans to participate in the music economy.
+                Found something you love? Place bids on your favorite music NFTs
+                or buy fractional ownership directly. Our platform supports both
+                full ownership and shared ownership models, allowing more fans
+                to participate in the music economy.
               </p>
               <ul className="space-y-2 text-gray-400 mb-6">
                 <li className="flex items-start">
@@ -155,7 +181,9 @@ const HowItWorks = () => {
                 </li>
                 <li className="flex items-start">
                   <ArrowRight className="h-5 w-5 text-neon-green mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Automatic royalty distributions to artists and co-owners</span>
+                  <span>
+                    Automatic royalty distributions to artists and co-owners
+                  </span>
                 </li>
               </ul>
               <Link to="/collection">
@@ -180,7 +208,9 @@ const HowItWorks = () => {
         </div>
 
         <section className="mt-24 mb-16">
-          <h2 className="heading-md text-white mb-10 text-center">Key Features</h2>
+          <h2 className="heading-md text-white mb-10 text-center">
+            Key Features
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -192,12 +222,15 @@ const HowItWorks = () => {
               <div className="h-12 w-12 rounded-full bg-neon-green/10 flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-neon-green" />
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">Role-Based Access</h3>
+              <h3 className="text-lg font-medium text-white mb-2">
+                Role-Based Access
+              </h3>
               <p className="text-gray-400">
-                Choose between listener and artist roles, each with unique capabilities and dashboard experiences.
+                Choose between listener and artist roles, each with unique
+                capabilities and dashboard experiences.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -208,12 +241,15 @@ const HowItWorks = () => {
               <div className="h-12 w-12 rounded-full bg-neon-green/10 flex items-center justify-center mb-4">
                 <Shield className="h-6 w-6 text-neon-green" />
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">Secure Ownership</h3>
+              <h3 className="text-lg font-medium text-white mb-2">
+                Secure Ownership
+              </h3>
               <p className="text-gray-400">
-                All transactions and ownership records are secured on the blockchain for maximum transparency.
+                All transactions and ownership records are secured on the
+                blockchain for maximum transparency.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -224,27 +260,32 @@ const HowItWorks = () => {
               <div className="h-12 w-12 rounded-full bg-neon-green/10 flex items-center justify-center mb-4">
                 <BarChart3 className="h-6 w-6 text-neon-green" />
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">Royalty Distribution</h3>
+              <h3 className="text-lg font-medium text-white mb-2">
+                Royalty Distribution
+              </h3>
               <p className="text-gray-400">
-                Automated royalty payments to artists and fractional owners when NFTs are sold or streamed.
+                Automated royalty payments to artists and fractional owners when
+                NFTs are sold or streamed.
               </p>
             </motion.div>
           </div>
         </section>
 
         <div className="text-center mt-20">
-          <h2 className="text-2xl font-semibold text-white mb-6">Ready to get started?</h2>
+          <h2 className="text-2xl font-semibold text-white mb-6">
+            Ready to get started?
+          </h2>
           <Link to="/">
             <Button
               className="bg-neon-green hover:bg-neon-green/90 text-black"
               size="lg"
             >
-              Join RhythMint Today
+              Join SwarNFT Today
             </Button>
           </Link>
         </div>
       </div>
-      
+
       <MusicPlayer />
     </motion.div>
   );
