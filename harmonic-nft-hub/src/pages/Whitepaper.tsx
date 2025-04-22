@@ -44,12 +44,7 @@ const Whitepaper = () => {
                   A comprehensive overview of RhythMint's vision, technology, and roadmap.
                   Learn how we're revolutionizing music ownership through blockchain technology.
                 </p>
-                <div className="mt-6">
-                  <Button className="bg-neon-green hover:bg-neon-green/90 text-black">
-                    <DownloadCloud className="mr-2 h-4 w-4" />
-                    Download PDF
-                  </Button>
-                </div>
+              
               </motion.div>
             </header>
 
